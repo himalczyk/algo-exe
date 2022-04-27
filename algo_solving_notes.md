@@ -64,6 +64,78 @@ print(isAnagram("aa", "a"))
 print(isAnagram("ab", "a"))
 ```
 
-# Two sum
+# Two sum indices return
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+nums = [2,7,11,15]
+target = 9
+
+Create a hashmap to map the value from the list and its index using a loop with enumerate, traversing through the index, element from the list.
+
+Use hashmap = {value : index}
+
+Add value and index to hashmap:
+
+hashmap = {2 : 0} etc.
+value:2
+index: 0
+
+Look for the difference between target - current number
+9-2 = 7
+Check if 7 is in the hashmap, if not, add the current number to the hashmap
+**current** hashmap = {2:0}
+Keep looping
+9-7 = 2
+check if 2 is in the hashmap, it is, since the opposite: 7+2 gives the target, return the current number (7) and the hashmap number given from the difference
+
+Once found the difference number in the hashmap from the equation above (target - current number)
+
+```
+def twoSum(nums: list, target: int) -> list:
+    # create hashmap to store list of numbers value and index
+    # hashmap = {value : index}
+    hashmap = {}
+    # use enumerate to have indexes and value of the current element
+    for idx, i in enumerate(nums):
+        # have the difference of the target and current element (number)
+        diff = target - i
+        # check if the diff is in the hashmap to give the opposite equation leading to the target
+        if not diff in hashmap:
+            # add a value : index pair to store the number
+            hashmap[i] = idx
+        else:
+            # return the first element + the second element index giving the wanted result
+            return [hashmap[diff], idx]
+```
+
+# Two sum numbers return
+
+Write a function that takes in a non-empty array of distinct integers and an
+integer representing a target sum. If any two numbers in the input array sum
+up to the target sum, the function should return them in an array, in any
+order. If no two numbers sum up to the target sum, the function should return
+an empty array.
+
+```
+def twoNumberSum(array, targetSum):
+    # create hashmap to store checked numbers
+    hashmap = {}
+    # traverse through the array with index, element enumerate method
+    for index, number in enumerate(array):
+        # check the opposite equation to getting the targetSum
+        summing = targetSum - number
+        # if equation number is found in the hashmap, return the number that lead to it and the equation result itself
+        if summing in hashmap:
+            return [number, summing]
+        # if the summing is not in the hashmap, add it to the hashmap
+        # summing = 10-11 = -1, adding until number = -1, if there: summing = 10-(-1) = 11, 11 is in the hashmap, and sum = 11+(-1) = 10, true result
+        hashmap[number] = True
+    return []
+```
 
 

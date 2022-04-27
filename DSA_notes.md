@@ -53,3 +53,52 @@ O(n^2) O(2^n)
 
 The larger the dataset, the more inefficient.
 
+# Stack
+
+LIFO Principle
+
+Last in first Out
+
+Last elemenet pushed, first element popped of.
+
+Last one added is the first to go out too.
+
+**Recursion
+
+Methods: Pop, Push, Peek, Contains
+
+Common stack usages: Redo/undo buttons, go back button, stacking the history of browsing (Facebook, Twitter, Instagram), when going back it just removes the last added (Facebook, Twitter)
+
+# Queue
+
+FIFO Principle
+
+First in first out
+
+First element addded to the queue is the first one to be removed.
+
+First element in the list is the first to go out
+
+Methods: Enqueue, dequeue, peek, contains
+
+Common queue usages: Job scheduling, printer queueing, modern cameras
+
+# Linked list
+
+Only able to traverse forwards
+
+**Sequential access** linear data structure in which every element is a seperate **object** called a **Node**, which has 2 parts
+- The **data**
+- The **reference** (or **pointer**), which points to the next **Node** in the **List**
+
+Node = data (strings, integers) + reference/pointer (where the next node in the linked list is)
+
+# Doubly linked lists
+
+Able to traverse both forwards and backwards using pointers
+
+**Next**: that particular nodes pointer which points to the next object in the list
+**Previous**: that particular nodes pointer which points to the previous object in the list
+
+Each node has two pointers instead of one as a linked list.
+
