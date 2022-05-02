@@ -1,6 +1,6 @@
 # Algo notes
 
-# Contains duplicate
+## Contains duplicate
 
 Loop through all the elements in the array checking if the number is there, continue with adding if not in the list.
 
@@ -32,7 +32,7 @@ def containsDuplicate_two(nums: list) -> bool:
     return False
 ```
 
-# Valid anagram
+## Valid anagram
 
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
@@ -64,7 +64,7 @@ print(isAnagram("aa", "a"))
 print(isAnagram("ab", "a"))
 ```
 
-# Two sum indices return
+## Two sum indices return
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -113,7 +113,7 @@ def twoSum(nums: list, target: int) -> list:
             return [hashmap[diff], idx]
 ```
 
-# Two sum numbers return
+## Two sum numbers return
 
 Write a function that takes in a non-empty array of distinct integers and an
 integer representing a target sum. If any two numbers in the input array sum
@@ -139,7 +139,7 @@ def twoNumberSum(array, targetSum):
 ```
 # Pointers
 
-# Validate Subsequence
+## Validate Subsequence
 
 O(n) Time ; O(1) Space
 
@@ -163,4 +163,24 @@ def isValidSubsequence(array, sequence):
 			seqIdx += 1
 		arrIdx += 1
 	return seqIdx == len(sequence)
+```
+
+## Valid palindrome
+
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+Given a string s, return true if it is a palindrome, or false otherwise.
+
+```
+s = "A man, a plan, a canal: Panama"
+
+
+def isPalindrome(self, s: str) -> bool:
+    # delete all alphanumeric characters (alphabet or numbers)
+    new_string = ''.join(e for e in s if e.isalnum())
+    # make them all lowercase
+    new_string = new_string.lower()
+    # return true if characters forwards equal the characters backwards. Otherwise it is not a palindrome
+    return True if new_string == new_string[::-1] else False
+
 ```
