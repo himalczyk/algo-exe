@@ -14,3 +14,18 @@ Examples
 * Input: [2,2,1,2,1], output = [2,2,2,1]"""
 
 
+def remove_smallest(numbers):
+    # create a copy of the input array to avoid mutation error
+    new_arr = numbers.copy()
+    if len(numbers) > 0:
+        lowest = min(new_arr)
+        counter = new_arr.count(lowest)
+        if counter > 1:
+            for idx, number in enumerate(new_arr):
+                if number == lowest:
+                    new_arr.pop(idx)
+                    break
+        else:
+            new_arr.remove(lowest)
+    return new_arr
+        
